@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>herkhe</title>
+</head>
+<body>
+<form  method="POST">
+Query:<input type="text" name="query">
+<input type="submit" value="submit">
+</form>
+<table>
+	{% for key in result %}
+	<tr>{{key}}</tr><br />
+	{% endfor %}	
+</table>
+
+</body>
+</html>
