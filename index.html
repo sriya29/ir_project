@@ -2,17 +2,31 @@
 <html>
 <head>
 	<title>herkhe</title>
+	<script type="text/javascript">
+		function myfunction(result) {
+
+			// body...
+			txt="<table>";
+			for (var i=0;i<result.length;i++){
+				txt+="<tr>"+result[i]+"</tr><br/>";
+			}
+			txt+="</table>";
+			console.log(txt);
+			document.getElementById("demo").innerHTML=txt;
+		}
+	</script>
 </head>
 <body>
-<form  method="POST">
+<form  method="POST" >
 Query:<input type="text" name="query">
-<input type="submit" value="submit">
+<input type="button" value="submit" onclick="myfunction({{result}})">
+<p id="demo"></p>
 </form>
-<table>
+<!--<table>
 	{% for key in result %}
 	<tr>{{key}}</tr><br />
 	{% endfor %}	
-</table>
+</table>-->
 
 </body>
 </html>
