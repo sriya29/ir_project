@@ -5,6 +5,7 @@ import re,requests,json,math
 app = Flask(__name__,template_folder="./Templates")
 @app.route("/", methods=["GET","POST"])
 def hello():
+	n_ten_items=[]
 	if request.method=='POST':
 		query=request.form['query']
 		data_dict=proceed(query)
@@ -12,7 +13,7 @@ def hello():
 		n_ty_items=list(n_items)
 		print(type(n_ty_items))
 		n_ty_items=n_ty_items[::-1]
-		n_ten_items=n_ty_items[:9]
+		n_ten_items.extend(n_ty_items[:9])
 		print(n_ten_items)
 	return render_template("index.html",result=n_ten_items)
 
